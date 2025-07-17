@@ -110,3 +110,4 @@ cython_debug/
 
 
 /backend/app/static/assets/
+.idea/

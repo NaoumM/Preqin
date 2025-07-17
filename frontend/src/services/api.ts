@@ -8,10 +8,7 @@ export async function getInvestors(): Promise<Investor[]> {
   return response.data
 }
 
-export async function getCommitments(
-  investorName: string,
-  assetClass: string | null
-): Promise<Commitment[]> {
+export async function getCommitments(investorName: string, assetClass: string | null): Promise<Commitment[]> {
   const params = assetClass ? { asset_class: assetClass } : {}
   const response = await axios.get(
     `${BASE_URL}/investors/${encodeURIComponent(investorName)}/commitments`,

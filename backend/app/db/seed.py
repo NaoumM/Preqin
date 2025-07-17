@@ -11,7 +11,7 @@ def seed():
     Base.metadata.create_all(bind=engine)
 
     df = pd.read_csv(CSV_FILE)
-    db: Session = SessionLocal()
+    db = SessionLocal()
 
     for _, row in df.iterrows():
         commitment = Commitment(

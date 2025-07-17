@@ -1,4 +1,3 @@
-from sqlalchemy.orm import Session
 from collections import defaultdict
 from app.db.models import Commitment
 
@@ -9,7 +8,7 @@ def format_amount(value):
 
 def get_investors_summary(db):
     rows = db.query(Commitment).all()
-    grouped = defaultdict(list)
+    grouped = defaultdict(list)  # by investor_name
     for row in rows:
         grouped[row.investor_name].append(row)
 
